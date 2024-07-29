@@ -16,10 +16,13 @@ struct RoomDetail: View {
             //.resizable()
             .resizable()
             .aspectRatio(contentMode: .fit)
+            .navigationBarTitle(Text(room.name))
+            
     }
 }
 
 #Preview {
-    //RoomDetail()
-    RoomDetail(room: testData[0])
+    //NavigationView ❌ - naviBarTitle ❌
+    NavigationView { RoomDetail(room: testData[0]) }
+    //RoomDetail(room: <#Room#>)
 }

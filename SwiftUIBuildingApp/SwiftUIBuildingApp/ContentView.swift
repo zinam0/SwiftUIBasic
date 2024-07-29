@@ -17,7 +17,6 @@ struct ContentView: View {
             List(rooms) { room in
                 //예전에는 NavigationButton -> NavigationLink
                 //클로저 함수형으로 보낼 수 있음
-                
                 NavigationLink(destination: RoomDetail(room: room)) {
                    RoomCell(room: room)
                 }
