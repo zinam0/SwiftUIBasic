@@ -20,27 +20,34 @@ struct RoomDetail: View {
         ZStack(alignment: .topLeading) {
             Image(room.imageName)
                 .resizable()
-                //.aspectRatio(contentMode: .fill)
+            //.aspectRatio(contentMode: .fill)
                 .aspectRatio(contentMode: zoomed ? .fill : .fit)
-                //old ⚠️
-                //.navigationBarTitle(Text(room.name), displayMode: .inline)
+            //old ⚠️
+            //.navigationBarTitle(Text(room.name), displayMode: .inline)
                 .navigationTitle(Text(room.name))
                 .navigationBarTitleDisplayMode(.inline)
                 .onTapGesture { //tapAction -> onTapGesture
                     //animation이 없다면 바로 커지거나 작아짐
-                    withAnimation { self.zoomed.toggle() }
-                }
+                    //withAnimation { self.zoomed.toggle() }
+                    withAnimation(.easeInOut(duration: 2)) {
+                        self.zoomed.toggle()
+                    }
+                } .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 100, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
-            Image(systemName: "video.fill")
-                .font(.title)
-                .padding(.all)
+            if room.hasVideo && !zoomed {
+                Image(systemName: "video.fill")
+                    .font(.title)
+                    .padding(.all)
+                    .transition(.move(edge: .leading))
+            }
         }
     }
 }
 //NavigationView ❌ - naviBarTitle ❌
 //NavigationView { RoomDetail(room: testData[0]) }
 #Preview {
-    NavigationView {
-        RoomDetail(room: testData[0])
+    Group {
+        NavigationView { RoomDetail(room: testData[0]) }
     }
+    
 }
