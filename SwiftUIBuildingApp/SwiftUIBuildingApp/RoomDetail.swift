@@ -12,17 +12,20 @@ struct RoomDetail: View {
     let room: Room
     
     var body: some View {
+        //반드시 추가 사항이 생기면 . 찍기
         Image(room.imageName)
-            //.resizable()
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .navigationBarTitle(Text(room.name))
-            
+            //old ⚠️
+            .navigationBarTitle(Text(room.name), displayMode: .inline)
+            .navigationTitle(Text(room.name))
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
-
+//NavigationView ❌ - naviBarTitle ❌
+//NavigationView { RoomDetail(room: testData[0]) }
 #Preview {
-    //NavigationView ❌ - naviBarTitle ❌
-    NavigationView { RoomDetail(room: testData[0]) }
-    //RoomDetail(room: <#Room#>)
+    NavigationView {
+        RoomDetail(room: testData[0])
+    }
 }
