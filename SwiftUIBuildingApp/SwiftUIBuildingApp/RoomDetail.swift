@@ -17,17 +17,24 @@ struct RoomDetail: View {
     @State private var zoomed = false
     var body: some View {
         //반드시 추가 사항이 생기면 . 찍기
-        Image(room.imageName)
-            .resizable()
-            .aspectRatio(contentMode: zoomed ? .fill : .fit)
-            .onTapGesture { //tapAction -> onTapGesture
-                self.zoomed.toggle()
-            }
-        //.aspectRatio(contentMode: .fill)
-            //old ⚠️
-            //.navigationBarTitle(Text(room.name), displayMode: .inline)
-            .navigationTitle(Text(room.name))
-            .navigationBarTitleDisplayMode(.inline)
+        ZStack(alignment: .topLeading) {
+            Image(room.imageName)
+                .resizable()
+                //.aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: zoomed ? .fill : .fit)
+                //old ⚠️
+                //.navigationBarTitle(Text(room.name), displayMode: .inline)
+                .navigationTitle(Text(room.name))
+                .navigationBarTitleDisplayMode(.inline)
+                .onTapGesture { //tapAction -> onTapGesture
+                    //animation이 없다면 바로 커지거나 작아짐
+                    withAnimation { self.zoomed.toggle() }
+                }
+            
+            Image(systemName: "video.fill")
+                .font(.title)
+                .padding(.all)
+        }
     }
 }
 //NavigationView ❌ - naviBarTitle ❌
