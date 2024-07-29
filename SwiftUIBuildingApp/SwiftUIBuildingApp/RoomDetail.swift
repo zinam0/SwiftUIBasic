@@ -10,14 +10,22 @@ import SwiftUI
 struct RoomDetail: View {
     
     let room: Room
-    
+    //@State?
+    //뷰의 상태를 저장하고 관리하기 위한 속성 래퍼(property wrapper)
+    //상태가 변경될 때 마다 해당 상태 사용하는 뷰를 다시 자동적으로 다시 렌더링하여 UI 최신 상태 유지
+    //view's Data
+    @State private var zoomed = false
     var body: some View {
         //반드시 추가 사항이 생기면 . 찍기
         Image(room.imageName)
             .resizable()
-            .aspectRatio(contentMode: .fit)
+            .aspectRatio(contentMode: zoomed ? .fill : .fit)
+            .onTapGesture { //tapAction -> onTapGesture
+                self.zoomed.toggle()
+            }
+        //.aspectRatio(contentMode: .fill)
             //old ⚠️
-            .navigationBarTitle(Text(room.name), displayMode: .inline)
+            //.navigationBarTitle(Text(room.name), displayMode: .inline)
             .navigationTitle(Text(room.name))
             .navigationBarTitleDisplayMode(.inline)
     }
