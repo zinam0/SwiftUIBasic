@@ -8,6 +8,7 @@
 import SwiftUI
 
               //you could define a User type with an id property that is stable across your app and your app’s database storage
+              //식별 가능 : 각각 고유한 이름표
 struct Photo : Identifiable {
     var id = UUID()
     var spot: String
