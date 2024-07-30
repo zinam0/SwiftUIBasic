@@ -36,6 +36,7 @@ struct ContentView: View {
                         }
                     }
                     .onDelete(perform: delete)
+                    .onMove(perform: move)
                 }
             }
             .navigationTitle(Text("Rooms"))
@@ -58,6 +59,10 @@ struct ContentView: View {
     
     func delete(at offsets: IndexSet) {
         store.rooms.remove(atOffsets: offsets)
+    }
+    
+    func move(from source: IndexSet, to destination: Int) {
+        store.rooms.move(fromOffsets: source, toOffset: destination)
     }
 }
 
