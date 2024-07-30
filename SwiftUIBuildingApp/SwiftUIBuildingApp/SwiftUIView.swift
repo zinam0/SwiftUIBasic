@@ -9,13 +9,13 @@ import SwiftUI
 import Combine
 //iOS 14
 //BindableObject -> ObservableObject
-class RoomStore : ObservableObject{
-    @Published var rooms: [Room] {
+class PhotoStore : ObservableObject{
+    @Published var photos: [Photo] {
         didSet { didChange.send() }
     }
     
-    init(rooms: [Room] = []) {
-        self.rooms = rooms
+    init(photos: [Photo] = []) {
+        self.photos = photos
     }
     
     var didChange = PassthroughSubject<Void, Never>()

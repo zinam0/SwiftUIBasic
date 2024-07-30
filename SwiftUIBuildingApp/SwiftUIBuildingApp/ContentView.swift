@@ -11,7 +11,7 @@ struct ContentView: View {
     
     //var rooms: [Room] = testData
     
-    @ObservedObject var store = RoomStore()
+    @ObservedObject var store = PhotoStore()
     
     var body: some View {
         
@@ -22,71 +22,70 @@ struct ContentView: View {
                     Button(action: {
                         addRoom()
                     }, label: {
-                        Text("Add Room")
-                            .foregroundColor(Color.black)
+                        Text("Add Photo")
+                            //.foregroundColor(Color.black)
                     })
                 }
                 
                 Section {
-                    ForEach(store.rooms) { room in
+                    ForEach(store.photos) { photo in
                         //예전에는 NavigationButton -> NavigationLink
                         //클로저 함수형으로 보낼 수 있음
-                        NavigationLink(destination: RoomDetail(room: room)) {
-                            RoomCell(room: room)
+                        NavigationLink(destination: PhotoDetail(photo: photo)) {
+                            PhotoCell(photo: photo)
                         }
                     }
                     .onDelete(perform: delete)
                     .onMove(perform: move)
                 }
             }
-            .navigationTitle(Text("Rooms"))
+            .navigationTitle(Text("Photo"))
             //.navigationBarItems(trailing: EditButton()) ⚠️
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
                         EditButton()
                 }
             }
-            
-            
             .listStyle(.grouped)
             
         }
     }
     
     func addRoom() {
-        store.rooms.append(Room(name: "hall 2", capacity: 2000))
+        store.photos.append(Photo(spot: "hall 2", month: 2000))
     }
     
     func delete(at offsets: IndexSet) {
-        store.rooms.remove(atOffsets: offsets)
+        store.photos.remove(atOffsets: offsets)
     }
     
     func move(from source: IndexSet, to destination: Int) {
-        store.rooms.move(fromOffsets: source, toOffset: destination)
+        store.photos.move(fromOffsets: source, toOffset: destination)
     }
 }
 
 #Preview {
-    ContentView(store: RoomStore(rooms: testData))
+    Group {
+        ContentView(store: PhotoStore(photos: testData))
+            //.environment(\.colorScheme, .dark)
+    }
 }
 
-struct RoomCell: View {
+struct PhotoCell: View {
     
-    var room: Room
+    var photo: Photo
     var body: some View {
         HStack {
             //각 이미지가 있다면
-            //            Image(room.imageName)
-            //                .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)  //둥글게 표현하기(UIKit)과 동일
-            //                .imageScale(.small)
-            
-            Image(systemName: "photo")
-                .imageScale(.large)
+                Image(photo.imageName)
+                .resizable()
+                .frame(width: 100, height: 100)
+                .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
                 .foregroundStyle(.tint)
             
             VStack(alignment: .leading) {
-                Text(room.name)
-                Text("\(room.capacity) people")
+                Text(photo.spot)
+                Text("\(photo.month) people")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }

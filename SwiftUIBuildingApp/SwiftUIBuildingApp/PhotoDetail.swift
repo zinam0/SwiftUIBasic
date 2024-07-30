@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct RoomDetail: View {
+struct PhotoDetail: View {
     
-    let room: Room
+    let photo: Photo
     //@State?
     //뷰의 상태를 저장하고 관리하기 위한 속성 래퍼(property wrapper)
     //상태가 변경될 때 마다 해당 상태 사용하는 뷰를 다시 자동적으로 다시 렌더링하여 UI 최신 상태 유지
@@ -18,13 +18,13 @@ struct RoomDetail: View {
     var body: some View {
         //반드시 추가 사항이 생기면 . 찍기
         ZStack(alignment: .topLeading) {
-            Image(room.imageName)
+            Image(photo.imageName)
                 .resizable()
             //.aspectRatio(contentMode: .fill)
                 .aspectRatio(contentMode: zoomed ? .fill : .fit)
             //old ⚠️
             //.navigationBarTitle(Text(room.name), displayMode: .inline)
-                .navigationTitle(Text(room.name))
+                .navigationTitle(Text(photo.spot))
                 .navigationBarTitleDisplayMode(.inline)
                 .onTapGesture { //tapAction -> onTapGesture
                     //animation이 없다면 바로 커지거나 작아짐
@@ -34,7 +34,7 @@ struct RoomDetail: View {
                     }
                 } .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 100, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
-            if room.hasVideo && !zoomed {
+            if photo.hasVideo && !zoomed {
                 Image(systemName: "video.fill")
                     .font(.title)
                     .padding(.all)
@@ -47,7 +47,7 @@ struct RoomDetail: View {
 //NavigationView { RoomDetail(room: testData[0]) }
 #Preview {
     Group {
-        NavigationView { RoomDetail(room: testData[0]) }
+        NavigationView { PhotoDetail(photo: testData[0]) }
     }
     
 }
