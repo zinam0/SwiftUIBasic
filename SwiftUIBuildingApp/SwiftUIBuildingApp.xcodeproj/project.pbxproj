@@ -55,8 +55,8 @@
 		752D73962C5788750053775E /* SwiftUIBuildingApp */ = {
 			isa = PBXGroup;
 			children = (
-				753720FD2C5912790081A28A /* CustomButton */,
 				752D73972C5788750053775E /* SwiftUIBuildingAppApp.swift */,
+				753720FD2C5912790081A28A /* CustomButton */,
 				752D739B2C5788790053775E /* Assets.xcassets */,
 				752D739D2C5788790053775E /* Preview Content */,
 				7571B80D2C58D548002968C7 /* ContentView.swift */,
