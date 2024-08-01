@@ -19,6 +19,7 @@
 		75265D2F2C5B4B5C004399FA /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75265D2E2C5B4B5C004399FA /* TrailingIconLabelStyle.swift */; };
 		75900E122C5B57E300A7B7FA /* ScrumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75900E112C5B57E300A7B7FA /* ScrumView.swift */; };
 		75900E142C5B662A00A7B7FA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75900E132C5B662A00A7B7FA /* DetailView.swift */; };
+		75900E162C5B753F00A7B7FA /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75900E152C5B753F00A7B7FA /* DetailEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		75265D2E2C5B4B5C004399FA /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
 		75900E112C5B57E300A7B7FA /* ScrumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumView.swift; sourceTree = "<group>"; };
 		75900E132C5B662A00A7B7FA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		75900E152C5B753F00A7B7FA /* DetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				75265D2E2C5B4B5C004399FA /* TrailingIconLabelStyle.swift */,
 				75900E112C5B57E300A7B7FA /* ScrumView.swift */,
 				75900E132C5B662A00A7B7FA /* DetailView.swift */,
+				75900E152C5B753F00A7B7FA /* DetailEditView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				75265D2F2C5B4B5C004399FA /* TrailingIconLabelStyle.swift in Sources */,
 				75265D282C5B3FA3004399FA /* Theme.swift in Sources */,
 				75265D172C5B1548004399FA /* Item.swift in Sources */,
+				75900E162C5B753F00A7B7FA /* DetailEditView.swift in Sources */,
 				75265D2A2C5B4038004399FA /* DailyScrum.swift in Sources */,
 				75265D132C5B1548004399FA /* UsingStacksApp.swift in Sources */,
 			);
