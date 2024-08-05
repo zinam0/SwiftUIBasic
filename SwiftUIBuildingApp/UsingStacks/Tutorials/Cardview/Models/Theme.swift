@@ -8,7 +8,7 @@
 import SwiftUI
 
 //Theme or ColorAsset이름은 정하기 나름
-enum Theme: String {
+enum Theme: String, CaseIterable, Identifiable {
     case bubblegum
     case buttercup
     case indigo
@@ -39,6 +39,10 @@ enum Theme: String {
     
     var name: String {
         rawValue.capitalized        //앞 자 대문자로 변환해주고 문자열로 변환해주는 기능
+    }
+    
+    var id: String {
+        name
     }
 }
 

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct DetailEditView: View {
-    //해당 속성을 정의한 뷰 내에서만 접근이 가능해짐
-    @State private var scrum =  DailyScrum.emptyScrum
+    //해당 속성을 정의한 뷰 내에서만 접근이 가능해짐 - 정보가 변경될 수 있기 때문에 State 키워드가 사용됨
+    @Binding var scrum:DailyScrum
     @State private var newAttendeeName = ""
     
     var body: some View {
@@ -24,6 +24,7 @@ struct DetailEditView: View {
                     Spacer()
                     Text("\(scrum.lengthInMinutes) minutes")
                 }
+                ThemePicker(selection: $scrum.theme)
             } header: {
                 Text("Meeting Info")
             }
@@ -60,5 +61,6 @@ struct DetailEditView: View {
 }
 
 #Preview {
-    DetailEditView()
+    //constant - Binding을 생성하는데 사용되는 것으로 변화하지 않는 상수 값을 전달할 때 사용
+    DetailEditView(scrum: .constant(DailyScrum.sampleData[0]))
 }
