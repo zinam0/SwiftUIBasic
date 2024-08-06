@@ -7,18 +7,22 @@
 
 import Foundation
 
+
+//지진 구조체
 struct Quake {
     let magnitude: Double
     let place: String
     let time: Date
     let code: String
     let detail: URL
+    var location: QuakeLocation?
 }
-
+//객체 고유 식별 가능
 extension Quake: Identifiable {
     var id: String { code }
 }
 
+//JSON 디코딩을 통해 Quake 객체 생성
 extension Quake: Decodable {
     private enum CodingKeys: String, CodingKey {
         case magnitude = "mag"

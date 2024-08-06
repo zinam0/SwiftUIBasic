@@ -7,6 +7,7 @@
 
 import Foundation
 
+//지진 데이터 디코딩해서 Quake 객체 생성
 struct GeoJSON: Decodable {
     private enum RootCodingKeys: String, CodingKey {
         case features
