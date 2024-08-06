@@ -7,10 +7,13 @@
 
 import SwiftUI
 
-struct ScrumView: View {
+struct ScrumsView: View {
     
     @Binding var scrums: [DailyScrum]
+    @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewScrumView = false
+    let saveAction: ()->Void
+    
     var body: some View {
         
         //리스트로만 나열 (테이블뷰)
@@ -35,13 +38,17 @@ struct ScrumView: View {
             .sheet(isPresented: $isPresentingNewScrumView, content: {
                 NewScrumSheet(scrums: $scrums, isPresentingScrumView: $isPresentingNewScrumView)
             })
+            //장면 비활성화되면 백그라운드 이동하기 전에 데이터 저장 등의 작업 수행
+            .onChange(of: scenePhase) { phase in
+                if phase == .inactive { saveAction() }
+            }
         }
     }
 }
 
 struct ScrumsView_Previews: PreviewProvider {
     static var previews: some View {
-        ScrumView(scrums: .constant(DailyScrum.sampleData))
+        ScrumsView(scrums: .constant(DailyScrum.sampleData), saveAction: {})
     }
 }
 

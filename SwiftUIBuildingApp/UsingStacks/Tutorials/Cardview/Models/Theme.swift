@@ -8,7 +8,8 @@
 import SwiftUI
 
 //Theme or ColorAsset이름은 정하기 나름
-enum Theme: String, CaseIterable, Identifiable {
+//Codable - encoding / decoding
+enum Theme: String, CaseIterable, Identifiable, Codable {
     case bubblegum
     case buttercup
     case indigo
