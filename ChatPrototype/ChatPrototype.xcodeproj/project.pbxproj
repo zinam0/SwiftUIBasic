@@ -17,6 +17,11 @@
 		754293162C62F28F006BA18E /* FeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754293152C62F28F006BA18E /* FeatureCard.swift */; };
 		754293182C62F7B9006BA18E /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754293172C62F7B9006BA18E /* GroupView.swift */; };
 		7542931A2C631C8B006BA18E /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754293192C631C8B006BA18E /* CircleView.swift */; };
+		7542931D2C63247F006BA18E /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7542931C2C63247F006BA18E /* DiceView.swift */; };
+		7542931F2C632819006BA18E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7542931E2C632819006BA18E /* LoadingView.swift */; };
+		754293222C6342C1006BA18E /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754293212C6342C1006BA18E /* ContactView.swift */; };
+		754293252C636982006BA18E /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754293242C636982006BA18E /* Friend.swift */; };
+		754293272C6369A5006BA18E /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754293262C6369A5006BA18E /* BirthdayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 		754293152C62F28F006BA18E /* FeatureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCard.swift; sourceTree = "<group>"; };
 		754293172C62F7B9006BA18E /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		754293192C631C8B006BA18E /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		7542931C2C63247F006BA18E /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
+		7542931E2C632819006BA18E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		754293212C6342C1006BA18E /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		754293242C636982006BA18E /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		754293262C6369A5006BA18E /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +73,11 @@
 		754292FD2C628A7E006BA18E /* ChatPrototype */ = {
 			isa = PBXGroup;
 			children = (
-				754293102C62934F006BA18E /* OnboardingFlow */,
+				754293232C636964006BA18E /* Birthdays */,
 				754292FE2C628A7E006BA18E /* ChatPrototypeApp.swift */,
+				754293202C63429B006BA18E /* Contact */,
+				7542931B2C632463006BA18E /* Dice */,
+				754293102C62934F006BA18E /* OnboardingFlow */,
 				7542930E2C629320006BA18E /* HelloSwift */,
 				7542930F2C629330006BA18E /* Wheather */,
 				754293022C628A82006BA18E /* Assets.xcassets */,
@@ -107,6 +120,48 @@
 				754293192C631C8B006BA18E /* CircleView.swift */,
 			);
 			path = OnboardingFlow;
+			sourceTree = "<group>";
+		};
+		7542931B2C632463006BA18E /* Dice */ = {
+			isa = PBXGroup;
+			children = (
+				7542931C2C63247F006BA18E /* DiceView.swift */,
+				7542931E2C632819006BA18E /* LoadingView.swift */,
+			);
+			path = Dice;
+			sourceTree = "<group>";
+		};
+		754293202C63429B006BA18E /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				754293212C6342C1006BA18E /* ContactView.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		754293232C636964006BA18E /* Birthdays */ = {
+			isa = PBXGroup;
+			children = (
+				754293292C6369B2006BA18E /* Views */,
+				754293282C6369A8006BA18E /* Models */,
+			);
+			path = Birthdays;
+			sourceTree = "<group>";
+		};
+		754293282C6369A8006BA18E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				754293242C636982006BA18E /* Friend.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		754293292C6369B2006BA18E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				754293262C6369A5006BA18E /* BirthdayView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,8 +235,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7542931A2C631C8B006BA18E /* CircleView.swift in Sources */,
+				754293222C6342C1006BA18E /* ContactView.swift in Sources */,
+				7542931D2C63247F006BA18E /* DiceView.swift in Sources */,
+				754293252C636982006BA18E /* Friend.swift in Sources */,
 				7542930D2C628F15006BA18E /* WheatherView.swift in Sources */,
+				7542931F2C632819006BA18E /* LoadingView.swift in Sources */,
 				754293122C62939D006BA18E /* WelcomePage.swift in Sources */,
+				754293272C6369A5006BA18E /* BirthdayView.swift in Sources */,
 				754293182C62F7B9006BA18E /* GroupView.swift in Sources */,
 				754293012C628A7E006BA18E /* ContentView.swift in Sources */,
 				754293142C62F241006BA18E /* FeaturesPage.swift in Sources */,
