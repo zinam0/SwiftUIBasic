@@ -26,7 +26,8 @@ class SampleData {
         //데이터베이스의 구조를 정의하고 있고 Movie 모델을 포함시키고 있음
         let schema = Schema([ //모든 데이터 모델의 스키마를 정의
             Movie.self,
-        ])
+            Friend.self
+                            ])
         //모델의 설정을 정의
         //데이터를 메모리에만 저장하고 디스크에 영구저장❌
         //테스트나 임시 데이터 저장 유용
@@ -50,6 +51,15 @@ class SampleData {
             context.insert(movie) //insert⭐️
         }
         
+        for friend in Friend.sampleData {
+            context.insert(friend)
+        }
+        
+        Friend.sampleData[0].favoriteMovie = Movie.sampleData[1]
+        Friend.sampleData[2].favoriteMovie = Movie.sampleData[0]
+        Friend.sampleData[3].favoriteMovie = Movie.sampleData[4]
+        Friend.sampleData[4].favoriteMovie = Movie.sampleData[0]
+        
         //data save
         do {
             try context.save()
@@ -60,5 +70,9 @@ class SampleData {
     
     var movie: Movie {
         Movie.sampleData[0]
+    }
+    
+    var friend: Friend {
+        Friend.sampleData[0]
     }
 }

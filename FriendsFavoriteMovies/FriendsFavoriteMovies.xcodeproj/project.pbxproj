@@ -14,6 +14,11 @@
 		754293402C63C2F5006BA18E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7542933F2C63C2F5006BA18E /* Preview Assets.xcassets */; };
 		754293472C63C725006BA18E /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754293462C63C725006BA18E /* SampleData.swift */; };
 		7542934B2C63CD20006BA18E /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7542934A2C63CD20006BA18E /* MovieDetail.swift */; };
+		7542934D2C645750006BA18E /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7542934C2C645750006BA18E /* Friend.swift */; };
+		7542934F2C645892006BA18E /* FriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7542934E2C645892006BA18E /* FriendList.swift */; };
+		754293512C645E38006BA18E /* FriendDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754293502C645E38006BA18E /* FriendDetail.swift */; };
+		754293532C64609C006BA18E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754293522C64609C006BA18E /* MainView.swift */; };
+		754293552C64680F006BA18E /* FilteredMovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754293542C64680F006BA18E /* FilteredMovieList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +30,11 @@
 		7542933F2C63C2F5006BA18E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		754293462C63C725006BA18E /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		7542934A2C63CD20006BA18E /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		7542934C2C645750006BA18E /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		7542934E2C645892006BA18E /* FriendList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendList.swift; sourceTree = "<group>"; };
+		754293502C645E38006BA18E /* FriendDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetail.swift; sourceTree = "<group>"; };
+		754293522C64609C006BA18E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		754293542C64680F006BA18E /* FilteredMovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredMovieList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +89,7 @@
 			children = (
 				7542933A2C63C2F2006BA18E /* Movie.swift */,
 				754293462C63C725006BA18E /* SampleData.swift */,
+				7542934C2C645750006BA18E /* Friend.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -88,6 +99,10 @@
 			children = (
 				754293382C63C2F2006BA18E /* MovieList.swift */,
 				7542934A2C63CD20006BA18E /* MovieDetail.swift */,
+				7542934E2C645892006BA18E /* FriendList.swift */,
+				754293502C645E38006BA18E /* FriendDetail.swift */,
+				754293522C64609C006BA18E /* MainView.swift */,
+				754293542C64680F006BA18E /* FilteredMovieList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,9 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754293512C645E38006BA18E /* FriendDetail.swift in Sources */,
+				754293532C64609C006BA18E /* MainView.swift in Sources */,
 				754293392C63C2F2006BA18E /* MovieList.swift in Sources */,
 				7542933B2C63C2F2006BA18E /* Movie.swift in Sources */,
 				7542934B2C63CD20006BA18E /* MovieDetail.swift in Sources */,
+				7542934F2C645892006BA18E /* FriendList.swift in Sources */,
+				7542934D2C645750006BA18E /* Friend.swift in Sources */,
+				754293552C64680F006BA18E /* FilteredMovieList.swift in Sources */,
 				754293372C63C2F2006BA18E /* FriendsFavoriteMoviesApp.swift in Sources */,
 				754293472C63C725006BA18E /* SampleData.swift in Sources */,
 			);
